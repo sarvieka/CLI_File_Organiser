@@ -4,6 +4,7 @@ import (
 
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 func main(){
@@ -35,9 +36,9 @@ dir := os.Args[1]
 			continue // skip item, keep loop running
 		}
 
-		// if there is a hidden folder/file, skip it (like .DS_Store)
+		extension := filepath.Ext(file.Name())
 		
-		fmt.Println(i+1, file.Name());
+		fmt.Println(i+1, file.Name(), "extension:", extension);
 	}
 	
 }
