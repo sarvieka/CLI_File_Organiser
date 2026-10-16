@@ -76,6 +76,16 @@ func main() {
     				}
 			}
 
+			sourcePath := filepath.Join(dir, file.Name())
+			destinationPath := filepath.Join(categoryPath, file.Name())
+			error := os.Rename(sourcePath, destinationPath)
+
+			if error != nil {
+				fmt.Println("Error moving file:", error)
+			} else {
+				fmt.Println("Moved:", file.Name(), "->", category)
+			}
+
 			
 
 			fmt.Println(
